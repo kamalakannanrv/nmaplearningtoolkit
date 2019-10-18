@@ -1,0 +1,218 @@
+#!/bin/bash
+
+function initial()
+{
+echo " "
+echo "We have entered Demonstration"
+PS3="Please enter your desired option: "
+select op1 in Tcpscan Synscan Ackscan Finscan Nullscan Xmasscan Udpscan Back Quit
+do
+case $op1 in 
+           Tcpscan)
+           echo "Tcp connect scan or Tcp scan"
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic> 
+           echo "Incase the port status is open the traffic will be "
+           echo " 64318 SYN ----> 80 "
+           echo " 64318 <---- 80 SYN (OR) SYN/ACK "
+           echo " 64318 ACK ----> 80 "
+           echo " 64318 <---- 80 RST (OR) RST/ACK "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be "
+           echo " 64318 SYN ----> 80 "
+           echo " 64318 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be "
+           echo " 64318 SYN ----> 80 "
+           echo " 64318 <---- 80 NO RESPONSE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial 
+           ;;          
+           
+           Synscan)
+           echo "Raw syn stealth scan or Syn scan"
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 62061 SYN ----> 80 "
+           echo " 62061 <---- 80 SYN (OR) SYN/ACK "
+           echo " 62061 RST ----> 80 "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 62061 SYN ----> 80 "
+           echo " 62061 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 62061 SYN ----> 80 "
+           echo " 62061 <---- 80 NO RESPONSE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial 
+           ;;          
+
+           Ackscan)
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 61389 ACK ----> 80 "
+           echo " 61389 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 61389 ACK ----> 80 "
+           echo " 61389 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 61389 ACK ----> 80 "
+           echo " 61389 <---- 80 NO RESPONSE (OR) ICMP UNREACHABLE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial
+           ;;
+
+           Finscan)
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 59437 FIN ----> 80 "
+           echo " 59437 <---- 80 NO RESPONSE "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 59437 FIN ----> 80 "
+           echo " 59437 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 59437 FIN ----> 80 "
+           echo " 59437 <---- 80 NO RESPONSE (OR) ICMP UNREACHABLE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial
+           ;;           
+
+           Nullscan)
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 59437 NO FLAG ----> 80 "
+           echo " 59437 <---- 80 NO RESPONSE "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 59437 NO FLAG ----> 80 "
+           echo " 59437 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 59437 NO FLAG ----> 80 "
+           echo " 59437 <---- 80 NO RESPONSE (OR) ICMP UNREACHABLE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial
+           ;;
+
+           Xmasscan)
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 63184 FIN,PSH OR URG ----> 80 "
+           echo " 63184 <---- 80 NO RESPONSE "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 63184 FIN,PSH OR URG ----> 80 "
+           echo " 63184 <---- 80 RST "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 63184 FIN,PSH OR URG ----> 80 "
+           echo " 63184 <---- 80 NO RESPONSE (OR) ICMP UNREACHABLE "
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial
+           ;;
+
+           Udpscan)
+           echo "Now tcpdump terminal will open for better understanding"  
+           echo "In Tcpdump [.] --> indicates ACK flag so [S.] --> will be indicating SYN/ACK flag the viceversa is for [R.]"
+           #<Provide your desired terminal command along with tcpdump command to display traffic>
+           echo "Incase the port status is open the traffic will be " 
+           echo " 57041 UDP REQUEST ----> 80 "
+           echo " 57041 <---- 80 UDP RESPONSE (OR) NO RESPONSE"
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is closed the traffic will be " 
+           echo " 57041 UDP REQUEST ----> 80 "
+           echo " 57041 <---- 80 ICMP PORT UNREACHABLE (TYPE=3 CODE=3) "
+           echo "                    (OR)  "
+           echo " "
+           echo "Incase the port status is filered the traffic will be " 
+           echo " 57041 UDP REQUEST ----> 80 "
+           echo " 57041 <---- 80 NO RESPONSE (OR) ICMP UNREACHABLE"
+           echo " "
+           #<Enter the nmap command here for the specified scan and with your desired host address> 
+           initial 
+           ;;
+
+           Back)
+           echo "You're heading back to the previous menu"
+           echo " "
+           final
+           ;;
+           
+           Quit)          
+           echo "You're leaving Nmap Learning Toolkit."
+           echo " " 
+           exit 0
+           ;;
+
+           *)
+           echo "Please enter a valid option"
+           echo " "
+           initial
+           ;;
+esac
+done
+}
+
+#Introduction to toolkit
+function final ()
+{
+echo "Welcome to Nmap Learning Toolkit "
+PS3="Please enter your desired option: "
+select op2 in Demonstration Quit 
+do
+case $op2 in
+           Demonstration)
+           initial            
+           ;;
+
+           Quit)          
+           echo "You're leaving Nmap Learning Toolkit."
+           echo " " 
+           exit 0
+           ;;
+
+           *)
+           echo "Please enter a valid option"
+           echo " "
+           final
+           ;;
+esac
+done
+}
+#Entering function name final
+final
